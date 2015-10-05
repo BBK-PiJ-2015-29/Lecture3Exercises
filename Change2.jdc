@@ -1,0 +1,55 @@
+println("Input cost of goods:");
+String c = readLine();
+int decimalPlace1;
+int totalCost;
+// find decimal place
+if (c.contains(".")) {
+	decimalPlace1 = c.indexOf(".");
+		
+	// get pounds
+	String pounds1 = c.substring(0, decimalPlace1)
+	
+	// get pennies
+	String pennies1 = c.substring(decimalPlace1+1);
+		
+	String totalC = pounds1.concat(pennies1);
+	
+	totalCost = Integer.parseInt(totalC);
+}
+else {
+	totalCost = (Integer.parseInt(c)) * 100;
+}
+
+println("Input amount paid:");
+String p = readLine();
+
+int decimalPlace2;
+int totalPaid;
+// find decimal place
+if (p.contains(".")) {
+	decimalPlace1 = p.indexOf(".");
+		
+	// get pounds
+	String pounds1 = p.substring(0, decimalPlace1)
+	
+	// get pennies
+	String pennies1 = p.substring(decimalPlace1+1);
+		
+	String totalP = pounds1.concat(pennies1);
+	
+	totalPaid = Integer.parseInt(totalP);
+}
+else {
+	totalPaid = (Integer.parseInt(p)) * 100;
+}
+
+// problem here with conversion of int to double
+int changePennies = totalPaid - totalCost;
+double changePounds = changePennies / 100;
+
+if (changePennies < 0) {
+	println("Amount paid is not sufficient");
+}
+else {
+	println("Change due: £" + changePounds);
+}

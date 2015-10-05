@@ -1,0 +1,21 @@
+println("Cost of goods:");
+double c = readDouble();
+double c100 = c * 100;
+int cost = (int) c100;
+
+println("Amount paid:");
+double p = readDouble();
+double p100 = p * 100;
+int paid = (int) p100;
+
+int change1 = paid - cost;
+double change2 = ((double) change1) / 100.00;
+
+
+if (paid < cost) {
+	println("Amount paid is less than cost");
+}
+else {
+	println("Change due: £" + change2);
+	//if ((change % 50) == 0)
+}

@@ -1,0 +1,42 @@
+println("Please input first number:");
+double i = readDouble();
+
+println("Please input second integer:");
+double j = readDouble();
+
+// assuming numbers are both integers:
+
+double result = 0;
+boolean valid = true;
+
+println("Please select function: ADD, SUBTRACT, MULTIPLY, DIVIDE");
+String function = readLine();
+String f = function.toUpperCase();
+
+String text = "";
+
+switch (f) {
+	case "ADD":  		
+	    result = i + j;
+        text = " plus ";
+		break;
+	case "SUBTRACT": 	
+		result = i - j;
+		text = " minus ";
+		break;
+	case "MULTIPLY": 	
+		result = i * j;
+		text = " multiplied by ";
+		break;
+	case "DIVIDE":	
+		result = i / j;
+		text = " divided by ";
+		break;
+	default:
+		valid = false;
+		break;
+}
+
+if (valid) {
+	println("Result of " + i + text + j + " is: " + result);
+}
