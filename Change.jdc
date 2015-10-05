@@ -1,23 +1,27 @@
+// get user input cost - convert to double then integer
 println("Cost of goods:");
 double c = readDouble();
 double c100 = c * 100;
 int cost = (int) c100;
 
+//get user input amount paid - convert to double then integer
 println("Amount paid:");
 double p = readDouble();
 double p100 = p * 100;
 int paid = (int) p100;
 
+// calculate change owed as integer then convert back to double
 int change1 = paid - cost;
 double change2 = ((double) change1) / 100.00;
 
-
+// check to see amount paid is sufficent
 if (paid < cost) {
 	println("Amount paid is less than cost");
 }
 else {
+	// Print change owed as multiples of coins and notes
+	// Find ane print number of £50 notes
 	println("Change due: £" + change2);
-	//int fifties = (int) (change2 / 50.00);
 	Double fiftiesNumber = new Double(change2 / 50);
 	int fifties = fiftiesNumber.intValue();
 	double fiftiesD = (double) fifties;
@@ -29,6 +33,7 @@ else {
 		change2 = change2 - (changeFifties);
 		}
 	
+	// Find and print number of £20 notes
 	Double twentiesNumber = new Double(change2 / 20);
 	int twenties = twentiesNumber.intValue();
 	double twentiesD = (double) twenties;
@@ -39,6 +44,7 @@ else {
 		change2 = change2 - (changeTwenties);
 	}
 	
+	// Find and print number of £10 notes
 	Double tensNumber = new Double(change2 / 10);
 	int tens = tensNumber.intValue();
 	double tensD = (double) tens;
@@ -49,6 +55,7 @@ else {
 		change2 = change2 - (changeTens);
 	}
 	
+	// Find and print number of £5 notes
 	Double fivesNumber = new Double(change2 / 5);
 	int fives = fivesNumber.intValue();
 	double fivesD = (double) fives;
@@ -57,6 +64,93 @@ else {
 	if (fives > 0) {
 		println(fives + " £5 notes");
 		change2 = change2 - (changeFives);
+	}
+	
+	// Find and print number of £2 coins
+	Double twosNumber = new Double(change2 / 2);
+	int twos = twosNumber.intValue();
+	double twosD = (double) twos;
+	double changeTwos = twosD * 2.00;
+		
+	if (twos > 0) {
+		println(twos + " £2 coins");
+		change2 = change2 - (changeTwos);
+	}
+	
+	// Find and print number of £1 coins
+	Double onesNumber = new Double(change2 / 1);
+	int ones = onesNumber.intValue();
+	double onesD = (double) ones;
+	double changeOnes = onesD * 1.00;
+		
+	if (ones > 0) {
+		println(ones + " £1 coin");
+		change2 = change2 - (changeOnes);
+	}
+	
+	// Find and print number of 50p coins
+	Double pfiftyNumber = new Double(change2 / 0.5);
+	int pfifties = pfiftyNumber.intValue();
+	double pfiftyD = (double) pfifties;
+	double changePfifty = pfiftyD * 0.5;
+		
+	if (pfifties > 0) {
+		println(pfifties + " 50p coin");
+		change2 = change2 - (changePfifty);
+	}
+	
+	// Find and print number of 20p coins
+	Double ptwentyNumber = new Double(change2 / 0.2);
+	int ptwenties = ptwentyNumber.intValue();
+	double ptwentyD = (double) ptwenties;
+	double changePtwenty = ptwentyD * 0.2;
+		
+	if (ptwenties > 0) {
+		println(ptwenties + " 20p coins");
+		change2 = change2 - (changePtwenty);
+	}
+	
+	// Find and print number of 10p coins
+	Double ptenNumber = new Double(change2 / 0.1);
+	int ptens = ptenNumber.intValue();
+	double ptenD = (double) ptens;
+	double changePten = ptenD * 0.1;
+		
+	if (ptens > 0) {
+		println(ptens + " 10p coins");
+		change2 = change2 - (changePten);
+	}
+	
+	// Find and print number of 5p coins
+	Double pfiveNumber = new Double(change2 / 0.05);
+	int pfives = pfiveNumber.intValue();
+	double pfiveD = (double) pfives;
+	double changePfive = pfiveD * 0.05;
+		
+	if (pfives > 0) {
+		println(pfives + " 5p coins");
+		change2 = change2 - (changePfive);
+	}
+	
+	// Find and print number of 2p coins
+	Double ptwoNumber = new Double(change2 / 0.02);
+	int ptwos = ptwoNumber.intValue();
+	double ptwoD = (double) ptwos;
+	double changePtwo = ptwoD * 0.02;
+		
+	if (ptwos > 0) {
+		println(ptwos + " 2p coins");
+		change2 = change2 - (changePtwo);
 		println(change2);
+	}
+	
+	// Find and print number of 1p coins
+	Double poneNumber = new Double(change2 / 0.01);
+	int pone = poneNumber.intValue();
+	double poneD = (double) pone;
+	double changePone = poneD * 0.01;
+		
+	if (pone > 0) {
+		println(pone + " 1p coins");
 	}
 }
