@@ -22,13 +22,41 @@ else {
 	int fifties = fiftiesNumber.intValue();
 	double fiftiesD = (double) fifties;
 	double changeFifties = fiftiesD * 50.00;
-	println(changeFifties);
-	
+		
 	if (fifties > 0) {
 		println("Change : ");
 		println(fifties + " £50 notes");
 		change2 = change2 - (changeFifties);
-		println(change2);
+		}
+	
+	Double twentiesNumber = new Double(change2 / 20);
+	int twenties = twentiesNumber.intValue();
+	double twentiesD = (double) twenties;
+	double changeTwenties = twentiesD * 20.00;
+		
+	if (twenties > 0) {
+		println(twenties + " £20 notes");
+		change2 = change2 - (changeTwenties);
 	}
 	
+	Double tensNumber = new Double(change2 / 10);
+	int tens = tensNumber.intValue();
+	double tensD = (double) tens;
+	double changeTens = tensD * 10.00;
+		
+	if (tens > 0) {
+		println(tens + " £10 notes");
+		change2 = change2 - (changeTens);
+	}
+	
+	Double fivesNumber = new Double(change2 / 5);
+	int fives = fivesNumber.intValue();
+	double fivesD = (double) fives;
+	double changeFives = fivesD * 5.00;
+		
+	if (fives > 0) {
+		println(fives + " £5 notes");
+		change2 = change2 - (changeFives);
+		println(change2);
+	}
 }
