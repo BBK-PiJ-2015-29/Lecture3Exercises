@@ -1,20 +1,20 @@
 println("Please input x value of point a");
-double ax1 = readDouble():
+double ax1 = readDouble();
 
 println("Please input y value of point a");
-double ay1 = readDouble():
+double ay1 = readDouble();
 
 println("Please input x value of point b");
-double bx1 = readDouble():
+double bx1 = readDouble();
 
 println("Please input y value of point b");
-double by1 = readDouble():
+double by1 = readDouble();
 
 println("Please input x value of point c");
-double cx1 = readDouble():
+double cx1 = readDouble();
 
 println("Please input y value of point c");
-double cy1 = readDouble():
+double cy1 = readDouble();
 
 Point a = new Point();
 a.x = ax1;
@@ -28,6 +28,21 @@ Point c = new Point();
 c.x = cx1;
 c.y = cy1;
 
+double AB = Math.sqrt(((b.x - a.x) * (b.x - a.x)) + ((b.y-a.y) * (b.y-a.y)));
+
+double AC = Math.sqrt(((c.x - a.x) * (c.x - a.x)) + ((c.y-a.y) * (c.y-a.y)));
+
+double BC = Math.sqrt(((c.x - b.x) * (c.x - b.x)) + ((c.y-b.y) * (c.y-b.y)));
+
+if ((AB < AC) && (AB < BC)) {
+	println("Points a and b are closest");
+}
+else if ((AC < AB) && (AC < BC)) {
+	println("Points a and c are closest");
+}
+else {
+	println("Points b and c are closest");
+}
 
 class Point {
 	double x;
