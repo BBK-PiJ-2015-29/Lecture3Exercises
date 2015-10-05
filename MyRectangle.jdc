@@ -1,0 +1,51 @@
+double x, y;
+
+//read first point
+println("Hello give me point 1 x value");
+x = readDouble();
+println("Hello give me point 1 y value");
+y = readDouble();
+
+Point point1 = new Point();
+point1.x = x;
+point1.y = y;
+
+//read second point
+println("Hello give me point 2 x value");
+x = readDouble();
+println("Hello give me point 2 y value");
+y = readDouble();
+
+Point point2 = new Point();
+point2.x = x;
+point2.y = y;
+
+// create rectangle
+Rectangle rectangle1 = new Rectangle();
+rectangle1.upLeft = point1;
+rectangle1.downRight = point2;
+
+
+// calculate width and height of the rectangle
+double rectWidth = Math.abs(rectangle1.downRight.x - rectangle1.upLeft.x);
+double rectHeight = Math.abs(rectangle1.upLeft.y - rectangle1.downRight.y);
+
+
+// calculate perimeter and area and print
+double perimeter = (rectWidth + rectHeight) * 2.0;
+
+double area = rectHeight * rectWidth;
+
+
+println("Area of the rectangle is: " + area);
+println("Perimeter of the rectangle is: " + perimeter);
+
+class Point {
+	double x;
+	double y;
+}
+
+class Rectangle {
+	Point upLeft;
+	Point downRight;
+}
