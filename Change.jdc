@@ -17,5 +17,18 @@ if (paid < cost) {
 }
 else {
 	println("Change due: £" + change2);
-	//if ((change % 50) == 0)
+	//int fifties = (int) (change2 / 50.00);
+	Double fiftiesNumber = new Double(change2 / 50);
+	int fifties = fiftiesNumber.intValue();
+	double fiftiesD = (double) fifties;
+	double changeFifties = fiftiesD * 50.00;
+	println(changeFifties);
+	
+	if (fifties > 0) {
+		println("Change : ");
+		println(fifties + " £50 notes");
+		change2 = change2 - (changeFifties);
+		println(change2);
+	}
+	
 }
